@@ -1,1 +1,42 @@
-hello
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		/*#demo{
+			width: 1200px;
+			height: 1200px;
+		} 不要用css设置宽高*/
+	</style>
+</head>
+<body>
+<canvas id="demo" width="600" height="600">
+	<!-- ie9以上才支持 -->
+</canvas>
+<script type="text/javascript">
+	// 第一步：拿到canvas的标签
+	var canvas = document.getElementById('demo');
+
+	canvas.style.border = '1px solid red';
+
+	// 第二步：拿到canvas的上下文
+	var ctx = canvas.getContext('2d'); // 3d是'webgl'
+
+	// 第三步：绘制
+	ctx.moveTo(100,100);// 起始
+	ctx.lineTo(200,100);// 从起始到200,100
+	ctx.lineTo(100,200);// 最后到100，100
+	// ctx.lineTo(100,100);
+	ctx.closePath();// 闭合路径
+
+	// 设置线宽
+	ctx.lineWidth = 4;
+
+  	ctx.strokeStyle = 'gold';// 描边的颜色，在描边前设置
+	ctx.stroke(); // 描边的意思
+
+	ctx.fillStyle = "green";
+	ctx.fill(); // 填充 默认黑
+</script>
+</body>
+</html>
